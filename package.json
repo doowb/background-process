@@ -20,16 +20,37 @@
   "scripts": {
     "test": "mocha"
   },
-  "keywords": [
-    "background",
-    "process"
-  ],
   "dependencies": {
     "extend-shallow": "^2.0.1"
   },
   "devDependencies": {
     "delete": "^0.3.2",
+    "gulp-format-md": "^0.1.10",
     "mkdirp": "^0.5.1",
     "mocha": "^3.0.2"
+  },
+  "keywords": [
+    "background",
+    "process"
+  ],
+  "verb": {
+    "toc": false,
+    "layout": "default",
+    "tasks": [
+      "readme"
+    ],
+    "plugins": [
+      "gulp-format-md"
+    ],
+    "lint": {
+      "reflinks": true
+    },
+    "related": {
+      "list": []
+    },
+    "reflinks": [
+      "verb",
+      "verb-generate-readme"
+    ]
   }
 }
