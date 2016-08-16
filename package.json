@@ -26,5 +26,10 @@
   ],
   "dependencies": {
     "extend-shallow": "^2.0.1"
+  },
+  "devDependencies": {
+    "delete": "^0.3.2",
+    "mkdirp": "^0.5.1",
+    "mocha": "^3.0.2"
   }
 }
