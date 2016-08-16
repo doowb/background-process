@@ -22,9 +22,10 @@ var background = module.exports = {};
 
 background.start = function(fp, options) {
   var opts = extend({}, options);
+  var stdio = opts.stdio || ['ignore', 'ignore'];
 
   var child = spawn(process.execPath, [fp].concat(opts.args || []), {
-    stdio: ['ipc'].concat(opts.stdio || []),
+    stdio: ['ipc'].concat(stdio),
     detached: true
   });
 
@@ -55,11 +56,6 @@ background.start = function(fp, options) {
 
 background.ready = function(cb) {
   var started = false;
-  function done(err, options) {
-    return function() {
-      cb(err, options);
-    };
-  }
 
   process.on('message', function (data) {
     if (started) return;
@@ -67,11 +63,9 @@ background.ready = function(cb) {
 
     try {
       data = JSON.parse(data);
-      setImmediate(done(null, data.options || {}));
+      cb(null, data.options || {});
     } catch(err) {
-      setImmediate(done(err));
-    } finally {
-      process.disconnect();
+      cb(err);
     }
   });
 };
