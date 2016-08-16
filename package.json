@@ -23,5 +23,8 @@
   "keywords": [
     "background",
     "process"
-  ]
+  ],
+  "dependencies": {
+    "extend-shallow": "^2.0.1"
+  }
 }
