@@ -50,7 +50,9 @@
     },
     "reflinks": [
       "verb",
-      "verb-generate-readme"
+      "verb-generate-readme",
+      "forever",
+      "forever-monitor"
     ]
   }
 }
