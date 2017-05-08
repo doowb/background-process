@@ -10,8 +10,7 @@
   },
   "license": "MIT",
   "files": [
-    "index.js",
-    "LICENSE"
+    "index.js"
   ],
   "main": "index.js",
   "engines": {
@@ -49,10 +48,10 @@
       "list": []
     },
     "reflinks": [
-      "verb",
-      "verb-generate-readme",
       "forever",
-      "forever-monitor"
+      "forever-monitor",
+      "verb",
+      "verb-generate-readme"
     ]
   }
 }
