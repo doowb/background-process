@@ -37,6 +37,8 @@ background.start = function(fp, options) {
   child.send(JSON.stringify({options: opts}));
   child.disconnect();
   child.unref();
+
+  return child.pid;
 };
 
 /**
