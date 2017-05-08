@@ -17,6 +17,7 @@ var background = module.exports = {};
  * ```
  * @param  {String} `fp` filepath to the background script
  * @param  {Object} `options` Additional options to send to the child process
+ * @return {Number} Returns the child process ID.
  * @api public
  */
 
@@ -31,7 +32,7 @@ background.start = function(fp, options) {
 
   child.on('exit', function(code) {
     if (code === 0) return;
-    console.error(`Child exited unexpectedly with exit code ${code}`);
+    console.error('Child exited unexpectedly with exit code "' + code + '"');
   });
 
   child.send(JSON.stringify({options: opts}));
