@@ -26,7 +26,7 @@ describe('background-process', function() {
     });
 
     if (typeof(childPid) !== Number || !childPid) {
-        console.log('Child ');
+        console.log('No child process ID returned');
     }
   });
 
