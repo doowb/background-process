@@ -21,13 +21,12 @@ describe('background-process', function() {
     var stderr = fs.openSync(actual('stderr.txt'), 'a');
 
     // start the worker and pass options
-    const childPid = background.start(fixtures('worker.js'), {
+    var childPid = background.start(fixtures('worker.js'), {
         stdio: [stdout, stderr]
     });
 
-    if (typeof(childPid) !== Number || !childPid) {
-        console.log('No child process ID returned');
-    }
+    assert(childPid, 'expected to return the child process ID');
+    assert.equal(typeof childPid, 'number');
   });
 
   it('should export an object', function() {
